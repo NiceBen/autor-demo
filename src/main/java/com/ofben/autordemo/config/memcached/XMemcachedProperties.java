@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * XMemcached 配置属性，读取的是 yml 文件中 spring.memcached 开头的属性
  */
 @ConfigurationProperties(prefix = "spring.memcached")
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:/application.properties")
 @Configuration
 @Data
 public class XMemcachedProperties {
