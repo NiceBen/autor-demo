@@ -38,6 +38,6 @@ public class StoreForInteractiveController extends InteractiveBaseController {
             ss.updateByGoodsUuid(goodsUuid, adjustNum);
         }
 
-        return "";
+        return "{}";
     }
 }

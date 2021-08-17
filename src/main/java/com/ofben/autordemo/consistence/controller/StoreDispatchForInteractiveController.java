@@ -37,6 +37,7 @@ public class StoreDispatchForInteractiveController extends InteractiveBaseContro
         StoreModel bjsm = call.call("goodsModule", "1", mapParam, StoreModel.class);
 
         // 上海
+        mapParam.put("ip", "localhost");
         mapParam.put("port", "8080");
         mapParam.put("url", "/front/storeFI/call");
         StoreModel shsm = call.call("goodsModule", "1", mapParam, StoreModel.class);
@@ -47,17 +48,19 @@ public class StoreDispatchForInteractiveController extends InteractiveBaseContro
 
         // 4.把这些新的数据分别调用回去
         // 北京
+        mapParam.put("ip", "localhost");
         mapParam.put("port", "9080");
         mapParam.put("url", "/storeFI/call");
         mapParam.put("adjustNum", bjsm.getStoreNum() - avg);
         call.call("goodsModule", "2", mapParam, StoreModel.class);
 
         // 上海
+        mapParam.put("ip", "localhost");
         mapParam.put("port", "8080");
         mapParam.put("url", "/front/storeFI/call");
         mapParam.put("adjustNum", shsm.getStoreNum() - avg);
         call.call("goodsModule", "2", mapParam, StoreModel.class);
 
-        return "";
+        return "{}";
     }
 }
