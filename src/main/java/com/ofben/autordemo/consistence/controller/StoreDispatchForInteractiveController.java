@@ -3,6 +3,7 @@ package com.ofben.autordemo.consistence.controller;
 import com.ofben.autordemo.actor.invoke.common.interactive.InteractiveBaseController;
 import com.ofben.autordemo.actor.invoke.common.interactive.InteractiveCallHelper;
 import com.ofben.autordemo.model.dto.StoreModel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.Map;
  * @date 2021-08-17
  * @since 1.0.0
  */
+@Slf4j
 @Controller
 @RequestMapping("/storeDispatchFI")
 public class StoreDispatchForInteractiveController extends InteractiveBaseController {
