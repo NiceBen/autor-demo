@@ -15,19 +15,17 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-    <!-- 将 shiro 外部单独文件配置进来 -->
-    <import resource="applicationContext-shiro.xml"/>
+    <import resource="applicationContext.xml"/>
 
-    <!-- Shiro -->
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-        <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/toLogin"/>
-        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
-        <property name="filterChainDefinitions">
-            <value>
-                /jcaptcha* = anon
-                /logout = anon
-            </value>
-        </property>
-    </bean>
+    <tx:advice id="txAdvice" transaction-manager="jtaTransactionManager">
+        <tx:attributes>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config expose-proxy="true" proxy-target-class="true">
+        <aop:pointcut id="txPointcut" expression="execution(* com.ofben.autordemo.transaction..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+    </aop:config>
 </beans>
