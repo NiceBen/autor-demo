@@ -1,13 +1,13 @@
-package com.ofben.autordemo.actor.invoke.target.web.mock.model.vo;
+package com.ofben.autordemo.redis.crud.model;
 
 import lombok.Data;
 
 /**
- * TODO
+ * 实体类
  *
  * @author SL Zhou
- * @date 2021-08-16
- * @since TODO
+ * @date 2021-08-26
+ * @since 1.0.0
  */
 @Data
 public class GoodsModel {
