@@ -1,5 +1,6 @@
 package com.ofben.autordemo.redis.test;
 
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import redis.clients.jedis.*;
 import redis.clients.jedis.util.Sharded;
 
@@ -26,8 +27,27 @@ public class Test1 {
 //        doClusterOperation();
 
         // 客户端分片
-        doClientShardOperation();
+//        doClientShardOperation();
 
+        // 连接池-客户端分片
+        doClientShardPoolOperation();
+
+    }
+
+    private static void doClientShardPoolOperation() {
+        JedisPoolConfig config = getJedisPoolConfig();
+        List<JedisShardInfo> list = new ArrayList<>();
+        list.add(new JedisShardInfo("localhost", 6381));
+        list.add(new JedisShardInfo("localhost", 6382));
+
+        ShardedJedisPool pool= new ShardedJedisPool(config, list, ShardedJedis.DEFAULT_KEY_TAG_PATTERN);
+
+        try (ShardedJedis shardedJedis = pool.getResource()) {
+            String k1 = shardedJedis.get("k1");
+            System.out.println(k1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void doClientShardOperation() {
@@ -74,11 +94,18 @@ public class Test1 {
         }
     }
     private static JedisPool getJedisPool() {
+        JedisPoolConfig config = getJedisPoolConfig();
+        JedisPool jedisPool = new JedisPool(config, "localhost", 6379);
+        return jedisPool;
+    }
+
+    private static JedisPoolConfig getJedisPoolConfig() {
         JedisPoolConfig config = new JedisPoolConfig();
         config.setMaxTotal(10);
         config.setMinIdle(3);
         config.setMaxIdle(8);
-        JedisPool jedisPool = new JedisPool(config, "localhost", 6379);
-        return jedisPool;
+        return config;
     }
+
+
 }
