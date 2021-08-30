@@ -6,7 +6,6 @@ import com.ofben.autordemo.actor.invoke.common.interactive.InteractiveModel;
 /**
  * 模块交互调用的辅助工具类
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

@@ -12,7 +12,6 @@ import java.util.Set;
 /**
  * Redis test
  *
- * @author SL Zhou
  * @date 2021-08-25
  * @since 1.0.0
  */

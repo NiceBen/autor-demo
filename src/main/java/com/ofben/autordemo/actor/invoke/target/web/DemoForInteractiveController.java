@@ -12,7 +12,6 @@ import java.util.Map;
 /**
  * 提供给外部远程调用的控制器
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

@@ -13,7 +13,6 @@ import java.util.Collection;
 /**
  * 公共 Session， 从 redis 或者 MemCached
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

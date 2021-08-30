@@ -15,7 +15,6 @@ import java.io.IOException;
 /**
  * 登录-单点登录-过滤器
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

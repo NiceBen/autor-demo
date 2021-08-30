@@ -5,7 +5,6 @@ import lombok.Data;
 /**
  * 分页对象
  *
- * @author SL Zhou
  * @date 2021-08-26
  * @since 1.0.0
  */

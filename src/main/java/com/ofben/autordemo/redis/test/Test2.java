@@ -12,7 +12,6 @@ import java.util.Objects;
 /**
  * Spring 集成 Jedis
  *
- * @author SL Zhou
  * @date 2021-08-26
  * @since 1.0.0
  */

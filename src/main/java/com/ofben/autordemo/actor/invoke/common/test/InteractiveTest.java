@@ -12,7 +12,6 @@ import java.util.Map;
 /**
  * {@link InteractiveCallHelper} Test
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

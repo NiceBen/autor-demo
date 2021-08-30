@@ -8,7 +8,6 @@ import org.apache.commons.httpclient.methods.PostMethod;
 /**
  * {@link PurgeMethod} 工具类
  *
- * @author SL Zhou
  * @date 2021-08-18
  * @since 1.0.0
  */

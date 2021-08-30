@@ -5,7 +5,6 @@ import lombok.Data;
 /**
  * 模块管理的 model
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

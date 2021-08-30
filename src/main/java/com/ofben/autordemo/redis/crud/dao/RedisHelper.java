@@ -9,7 +9,6 @@ import java.io.FileInputStream;
 /**
  * 单例模式创建 JedisPool
  *
- * @author SL Zhou
  * @date 2021-08-26
  * @since 1.0.0
  */

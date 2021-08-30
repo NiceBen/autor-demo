@@ -14,7 +14,6 @@ import java.util.Map;
 /**
  * 各个模块的管理控制器
  *
- * @author SL Zhou
  * @date 2021-08-17
  * @since 1.0.0
  */

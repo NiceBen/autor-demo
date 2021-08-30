@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * 进行模块间交互调用的基础控制器
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */

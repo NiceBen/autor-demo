@@ -14,7 +14,6 @@ import java.util.Map;
 /**
  * 辅助远程调用类：模块间相互调用的辅助类
  *
- * @author SL Zhou
  * @date 2021-08-16
  * @since 1.0.0
  */
