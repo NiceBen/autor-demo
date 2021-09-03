@@ -4,6 +4,11 @@ import com.ofben.autordemo.optimize.usertest.UserModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @SpringBootTest
 class AutorDemoApplicationTests {
 
@@ -15,7 +20,36 @@ class AutorDemoApplicationTests {
 
 //        complexTypeTransmit();
 
-        simpleTypeTransmit();
+//        simpleTypeTransmit();
+
+        testParallelStream();
+    }
+
+    private static void testParallelStream() {
+
+        /*
+        SysCountryCovidExample example = new SysCountryCovidExample();
+        List<SysCountryCovid> countryCovids = sysCountryCovidMapper.selectByExample(example);
+
+        List<String> covidList = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(countryCovids)) {
+            countryCovids.parallelStream().forEach(covid -> covidList.add(covid.getCountryCode()));
+        }
+
+        return covidList;
+         */
+        List<String> demoList = new ArrayList<>();
+        for (int i = 1; i <= 1000; i++) {
+            demoList.add("hello" + i);
+            demoList.add("world" + i);
+        }
+        List<String> targetList = new ArrayList<>();
+        List<String> listTo = demoList.parallelStream().collect(Collectors.toList());
+
+        System.out.println("------------");
+        listTo.forEach(System.out::println);
+        System.out.println(listTo.size());
+
     }
 
     private static void simpleTypeTransmit() {
