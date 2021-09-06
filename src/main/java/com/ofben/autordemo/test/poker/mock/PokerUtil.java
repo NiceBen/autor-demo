@@ -2,6 +2,7 @@ package com.ofben.autordemo.test.poker.mock;
 
 import org.springframework.util.CollectionUtils;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +27,11 @@ public class PokerUtil {
         }
 
         // 返回一个深拷贝的List
-        List<Poker> newPokers = new ArrayList<>();
-        BeanUtils.copyListProperties(pokers, newPokers, Poker.class, Poker.class);
-        return newPokers;
+//        List<Poker> newPokers = new ArrayList<>();
+//        BeanUtils.copyListProperties(pokers, newPokers, Poker.class, Poker.class);
+//        return newPokers;
+        // 这里应该不用深拷贝，后续具体的对象内容不会发生改变。所以使用浅拷贝，新生成要给 集合 类
+        return new ArrayList<>(pokers);
     }
 
     private static void initPokers() {
