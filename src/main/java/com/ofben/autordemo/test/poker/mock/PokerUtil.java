@@ -1,13 +1,12 @@
 package com.ofben.autordemo.test.poker.mock;
 
-import com.google.common.collect.ImmutableList;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO
+ * 生成 poker
  *
  * @date 2021-09-06
  * @since 1.0.0

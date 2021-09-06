@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
  */
 public class PokerFaceMapTest {
 
-
     private static final String[] arr1 = {"redHeart", "blackHeart", "redCard", "blackCard"};
     private static final String[] arr2 = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     // 定义 Map 集合用来存放索引和牌
