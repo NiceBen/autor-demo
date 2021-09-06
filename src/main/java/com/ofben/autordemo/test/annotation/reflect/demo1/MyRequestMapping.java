@@ -7,7 +7,6 @@ import java.lang.annotation.*;
 /**
  * {@link RequestMapping} test
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

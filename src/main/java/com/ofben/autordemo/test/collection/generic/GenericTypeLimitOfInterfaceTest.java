@@ -7,7 +7,6 @@ import com.ofben.autordemo.test.collection.generic.Mock.Dog;
 /**
  * 限制泛型 类型范围 Test
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

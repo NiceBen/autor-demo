@@ -3,7 +3,6 @@ package com.ofben.autordemo.test.collection.generic;
 /**
  * 泛型的 Model 类
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

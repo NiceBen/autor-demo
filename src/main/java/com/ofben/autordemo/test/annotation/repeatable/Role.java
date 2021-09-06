@@ -5,7 +5,6 @@ import java.lang.annotation.Repeatable;
 /**
  * TODO
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

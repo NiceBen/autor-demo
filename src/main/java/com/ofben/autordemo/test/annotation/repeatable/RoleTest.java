@@ -3,7 +3,6 @@ package com.ofben.autordemo.test.annotation.repeatable;
 /**
  * {@link Role}
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @see Role
  * @since 1.0.0

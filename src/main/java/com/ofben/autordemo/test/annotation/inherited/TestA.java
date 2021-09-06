@@ -3,7 +3,6 @@ package com.ofben.autordemo.test.annotation.inherited;
 /**
  * {@link MyInherited} test
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

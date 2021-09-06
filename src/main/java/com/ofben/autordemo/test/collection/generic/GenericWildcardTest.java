@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 泛型通配符
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @since 1.0.0
  */

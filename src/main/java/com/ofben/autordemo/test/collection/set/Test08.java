@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * {@link Set}
  *
- * @author SL Zhou
  * @date 2021-09-03
  * @see Set
  * @see TreeSet
