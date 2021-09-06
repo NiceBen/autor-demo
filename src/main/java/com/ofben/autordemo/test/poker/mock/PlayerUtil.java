@@ -1,5 +1,7 @@
 package com.ofben.autordemo.test.poker.mock;
 
+import org.springframework.util.CollectionUtils;
+
 import java.util.*;
 
 /**
@@ -9,6 +11,8 @@ import java.util.*;
  * @since 1.0.0
  */
 public class PlayerUtil {
+
+    private List<Poker> privatePoker;
 
     private List<Poker> player1 = new ArrayList<>();
     private List<Poker> player2 = new ArrayList<>();
@@ -47,7 +51,7 @@ public class PlayerUtil {
     }
 
     private void shuffleAndTakePokers() {
-        List<Poker> privatePoker = PokerUtil.getPokers();
+        privatePoker = CollectionUtils.isEmpty(privatePoker)?PokerUtil.getPokers():privatePoker;
         // shuffle
         Collections.shuffle(privatePoker);
         clearPlayerHandPokers();
