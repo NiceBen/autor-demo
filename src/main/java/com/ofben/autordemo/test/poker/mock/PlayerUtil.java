@@ -43,7 +43,7 @@ public class PlayerUtil {
         Random r = new Random();
         int bossIndex = r.nextInt(3);
         String boss = playerNames.get(bossIndex);
-        System.out.println("this play game boss is : " + boss);
+        System.out.println("此局地主是: " + boss);
     }
 
     private void shuffleAndTakePokers() {
