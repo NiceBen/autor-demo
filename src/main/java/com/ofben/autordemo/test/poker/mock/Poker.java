@@ -30,23 +30,26 @@ public class Poker {
         return type;
     }
 
-    public void setType(PokerTypeEnum type) {
+    public Poker setType(PokerTypeEnum type) {
         this.type = type;
+        return this;
     }
 
     public PokerValueEnum getValue() {
         return value;
     }
 
-    public void setValue(PokerValueEnum value) {
+    public Poker setValue(PokerValueEnum value) {
         this.value = value;
+        return this;
     }
 
     public Integer getOrder() {
         return order;
     }
 
-    public void setOrder(Integer order) {
+    public Poker setOrder(Integer order) {
         this.order = order;
+        return this;
     }
 }

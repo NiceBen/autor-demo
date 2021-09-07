@@ -43,11 +43,7 @@ public class PokerUtil {
             if (PokerValueEnum.value_0 != valueEnum) {
                 for (PokerTypeEnum typeEnum : types) {
                     if (PokerTypeEnum.big_Joker != typeEnum && PokerTypeEnum.small_Joker != typeEnum) {
-                        Poker poker = new Poker();
-                        poker.setType(typeEnum);
-                        poker.setValue(valueEnum);
-                        poker.setOrder(pokerIndex++);
-                        pokers.add(poker);
+                        pokers.add(new Poker(typeEnum, valueEnum, pokerIndex));
                     }
                 }
             }
