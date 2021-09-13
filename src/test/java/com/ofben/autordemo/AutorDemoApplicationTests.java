@@ -4,6 +4,7 @@ import com.ofben.autordemo.optimize.usertest.UserModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +23,15 @@ class AutorDemoApplicationTests {
 
 //        simpleTypeTransmit();
 
-        testParallelStream();
+//        testParallelStream();
+
+        testDate();
+    }
+
+    private static void testDate() {
+        LocalDate beforeDate = LocalDate.now();
+        LocalDate afterDate = beforeDate.plusDays(100);
+        System.out.println(afterDate);
     }
 
     private static void testParallelStream() {
