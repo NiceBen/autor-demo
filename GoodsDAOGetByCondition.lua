@@ -43,7 +43,7 @@ local goodsUuids = redis.call("lrange", "GoodsUuidsL", 0, -1)
 
 local count = 0
 
-local pageStart = qm.page.nowPage *
+local pageStart = qm.page.nowPage
 local pageStart = 0
 local pageEnd = 1
 
