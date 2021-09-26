@@ -9,6 +9,6 @@ package com.ofben.autordemo.spring.annotation;
 public class File {
 
     /**
-     * https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-child-bean-definitions
+     * https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-annotation-config
      */
 }
