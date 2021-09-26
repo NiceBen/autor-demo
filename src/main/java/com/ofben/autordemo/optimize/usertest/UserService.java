@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Autowired
+    @Autowired(required = false)
     private UserQueueSender sender;
 
     public void save(UserModel um) {

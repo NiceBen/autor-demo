@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--基于CGLIB代理-->
+    <bean id="userPreferences" class="com.ofben.autordemo.spring.bean.UserPreferences" scope="session">
+        <aop:scoped-proxy/>
+    </bean>
+
+    <!--基于JDK动态代理-->
+    <bean id="userPreferences2" class="com.ofben.autordemo.spring.bean.UserPreferences2" scope="session">
+        <aop:scoped-proxy proxy-target-class="false"/>
+    </bean>
+
+    <bean id="simpleUserService" class="com.ofben.autordemo.spring.bean.SimpleUserService">
+        <property name="userPreferences" ref="userPreferences"/>
+        <property name="userPreferences2" ref="userPreferences2"/>
+    </bean>
+</beans>

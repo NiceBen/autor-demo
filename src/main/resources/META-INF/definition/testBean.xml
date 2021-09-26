@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--    <bean id="testBean" abstract="true" class="com.ofben.autordemo.spring.definition.TestBean">-->
+    <bean id="testBean" abstract="true">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+        <property name="hello" value="world"/>
+    </bean>
+
+    <bean id="derivedTestBean" class="com.ofben.autordemo.spring.definition.DerivedTestBean"
+          parent="testBean" init-method="init">
+        <property name="name" value="override"/>
+        <property name="address" value="BEIJING"/>
+    </bean>
+</beans>

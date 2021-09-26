@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="manager2" class="com.ofben.autordemo.spring.bean.Manager" scope="myScope"/>
+
+    <bean id="accountDao" class="com.ofben.autordemo.spring.bean.AccountDao"/>
+
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="thread">
+                    <bean class="org.springframework.context.support.SimpleThreadScope"/>
+                </entry>
+                <entry key="myScope">
+                    <bean class="com.ofben.autordemo.spring.bean.MyScope"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>
