@@ -7,6 +7,7 @@
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="beanOne" class="com.ofben.autordemo.spring.bean.BeanOne" depends-on="manager,accountDao">
+        <qualifier type="com.ofben.autordemo.spring.annotation.Genre" value="active"/>
         <property name="manager" ref="manager"/>
     </bean>
 

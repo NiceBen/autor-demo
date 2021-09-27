@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="movieCatalog" class="com.ofben.autordemo.spring.annotation.MovieCatalog">
+        <qualifier type="com.ofben.autordemo.spring.annotation.Offline"/>
+    </bean>
+
+    <bean id="myBean" class="com.ofben.autordemo.spring.annotation.MyBean">
+        <qualifier type="com.ofben.autordemo.spring.annotation.MovieQualifier">
+            <attribute key="format" value="DVD"/>
+            <attribute key="genre" value="Action"/>
+        </qualifier>
+    </bean>
+
+    <bean id="myBean2" class="com.ofben.autordemo.spring.annotation.MyBean">
+        <meta key="format" value="DVD"/>
+        <meta key="genre" value="Action"/>
+    </bean>
+
+    <bean id="customAutowireConfigurer"
+          class="org.springframework.beans.factory.annotation.CustomAutowireConfigurer">
+        <property name="customQualifierTypes">
+            <set>
+                <value>com.ofben.autordemo.spring.annotation.MovieQualifier</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="test" class="com.ofben.autordemo.spring.annotation.CustomAutowireConfigurerTest"/>
+
+</beans>
