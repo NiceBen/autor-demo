@@ -6,12 +6,45 @@
         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <!-- Spring 配置文件开始 -->
+<!--    <context-param>-->
+<!--        <param-name>contextConfigLocation</param-name>-->
+<!--        <param-value>-->
+<!--            classpath:applicationContext*.xml,classpath*:spring-mvc.xml-->
+<!--        </param-value>-->
+<!--    </context-param>-->
+
+    <!-- 基于 Spring ApplicationContext 的配置 -->
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:applicationContext*.xml,classpath*:spring-mvc.xml
-        </param-value>
+        <param-value>com.ofben.autordemo.spring.container.AppConfig</param-value>
     </context-param>
+    
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextClass</param-name>
+            <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+        </init-param>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>com.ofben.autordemo.spring.container.AppConfig</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
+
 
     <!-- shiro filter -->
     <filter>
