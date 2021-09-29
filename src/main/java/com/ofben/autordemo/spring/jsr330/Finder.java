@@ -1,11 +1,11 @@
 package com.ofben.autordemo.spring.jsr330;
 
 /**
- * TODO
+ * Bean
  *
- * @author SL Zhou
  * @date 2021-09-28
- * @since TODO
+ * @since 1.0.0
  */
 public interface Finder {
+    void findMovies();
 }

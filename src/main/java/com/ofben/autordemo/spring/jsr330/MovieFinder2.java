@@ -9,8 +9,9 @@ import org.springframework.stereotype.Component;
  * @since 1.0.0
  */
 @Component
-public class MovieFinder {
+public class MovieFinder2 implements Finder {
 
+    @Override
     public void findMovies() {
         System.out.println(this);
     }

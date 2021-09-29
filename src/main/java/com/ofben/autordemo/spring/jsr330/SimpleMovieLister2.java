@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  * {@link Inject}
@@ -16,26 +17,26 @@ import javax.inject.Named;
  */
 @Configuration
 @ComponentScan("com.ofben.autordemo.spring.jsr330")
-public class SimpleMovieLister {
+public class SimpleMovieLister2 {
 
-    private MovieFinder movieFinder;
+    private Provider<Finder> finder;
 
     @Inject
-    public void setMovieFinder(MovieFinder movieFinder) {
-        this.movieFinder = movieFinder;
+    public void setMovieFinder(@Named("movieFinder") Provider<Finder> finder) {
+        this.finder = finder;
     }
 
     public void listMovies() {
-        this.movieFinder.findMovies();
+        this.finder.get().findMovies();
         // ...
     }
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.register(SimpleMovieLister.class);
+        context.register(SimpleMovieLister2.class);
         context.refresh();
 
-        SimpleMovieLister bean = context.getBean(SimpleMovieLister.class);
+        SimpleMovieLister2 bean = context.getBean(SimpleMovieLister2.class);
         bean.listMovies();
 
         context.close();
