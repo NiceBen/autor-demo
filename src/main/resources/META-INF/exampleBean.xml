@@ -6,13 +6,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="init" default-destroy-method="destroy">
 
-    <bean id="exampleBean" class="com.ofben.autordemo.spring.bean.ExampleBean"
+    <bean id="exampleBean" class="com.ofben.autordemo.spring.ioc.bean.ExampleBean"
           init-method="init" destroy-method="cleanup">
         <property name="age">
             <value>2</value>
         </property>
     </bean>
 
-<!--    <bean id="exampleBean2" class="com.ofben.autordemo.spring.bean.ExampleBean"/>-->
+<!--    <bean id="exampleBean2" class="com.ofben.autordemo.spring.ioc.bean.ExampleBean"/>-->
 
 </beans>

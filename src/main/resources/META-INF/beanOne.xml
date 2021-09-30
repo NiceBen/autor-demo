@@ -6,13 +6,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="beanOne" class="com.ofben.autordemo.spring.bean.BeanOne" depends-on="manager,accountDao">
-        <qualifier type="com.ofben.autordemo.spring.annotation.Genre" value="active"/>
+    <bean id="beanOne" class="com.ofben.autordemo.spring.ioc.bean.BeanOne" depends-on="manager,accountDao">
+        <qualifier type="com.ofben.autordemo.spring.ioc.annotation.Genre" value="active"/>
         <property name="manager" ref="manager"/>
     </bean>
 
-    <bean id="manager" class="com.ofben.autordemo.spring.bean.Manager"/>
+    <bean id="manager" class="com.ofben.autordemo.spring.ioc.bean.Manager"/>
 
-    <bean id="accountDao" class="com.ofben.autordemo.spring.bean.AccountDao"/>
+    <bean id="accountDao" class="com.ofben.autordemo.spring.ioc.bean.AccountDao"/>
 
 </beans>

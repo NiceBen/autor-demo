@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="templateBean" class="com.ofben.autordemo.spring.bean.TemplateBean"/>
+    <bean id="templateBean" class="com.ofben.autordemo.spring.ioc.bean.TemplateBean"/>
 
-    <bean id="demoBean" class="com.ofben.autordemo.spring.bean.DemoBean">
+    <bean id="demoBean" class="com.ofben.autordemo.spring.ioc.bean.DemoBean">
         <property name="properties">
             <props>
                 <prop key="name">zhangsan</prop>
@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean id="parent" abstract="true" class="com.ofben.autordemo.spring.bean.ComplexObject">
+    <bean id="parent" abstract="true" class="com.ofben.autordemo.spring.ioc.bean.ComplexObject">
         <property name="adminEmails">
             <props>
                 <prop key="administrator">admin@example.com</prop>

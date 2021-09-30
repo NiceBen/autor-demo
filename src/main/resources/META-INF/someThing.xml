@@ -6,12 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <bean id="someThing" class="com.ofben.autordemo.spring.bean.SomeThing">
+    <bean id="someThing" class="com.ofben.autordemo.spring.ioc.bean.SomeThing">
 <!--        <property name="fred.bob.sammy" value="123"/>-->
     </bean>
 
-    <bean id="fred" class="com.ofben.autordemo.spring.bean.Fred"/>
+    <bean id="fred" class="com.ofben.autordemo.spring.ioc.bean.Fred"/>
 
-    <bean id="bob" class="com.ofben.autordemo.spring.bean.Bob"/>
+    <bean id="bob" class="com.ofben.autordemo.spring.ioc.bean.Bob"/>
     
 </beans>

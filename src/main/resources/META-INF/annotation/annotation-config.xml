@@ -9,18 +9,18 @@
 
     <context:annotation-config/>
 
-    <bean id="movieCatalog" class="com.ofben.autordemo.spring.annotation.MovieCatalog">
-        <qualifier type="com.ofben.autordemo.spring.annotation.Offline"/>
+    <bean id="movieCatalog" class="com.ofben.autordemo.spring.ioc.annotation.MovieCatalog">
+        <qualifier type="com.ofben.autordemo.spring.ioc.annotation.Offline"/>
     </bean>
 
-    <bean id="myBean" class="com.ofben.autordemo.spring.annotation.MyBean">
-        <qualifier type="com.ofben.autordemo.spring.annotation.MovieQualifier">
+    <bean id="myBean" class="com.ofben.autordemo.spring.ioc.annotation.MyBean">
+        <qualifier type="com.ofben.autordemo.spring.ioc.annotation.MovieQualifier">
             <attribute key="format" value="DVD"/>
             <attribute key="genre" value="Action"/>
         </qualifier>
     </bean>
 
-    <bean id="myBean2" class="com.ofben.autordemo.spring.annotation.MyBean">
+    <bean id="myBean2" class="com.ofben.autordemo.spring.ioc.annotation.MyBean">
         <meta key="format" value="DVD"/>
         <meta key="genre" value="Action"/>
     </bean>
@@ -29,11 +29,11 @@
           class="org.springframework.beans.factory.annotation.CustomAutowireConfigurer">
         <property name="customQualifierTypes">
             <set>
-                <value>com.ofben.autordemo.spring.annotation.MovieQualifier</value>
+                <value>com.ofben.autordemo.spring.ioc.annotation.MovieQualifier</value>
             </set>
         </property>
     </bean>
 
-    <bean id="test" class="com.ofben.autordemo.spring.annotation.CustomAutowireConfigurerTest"/>
+    <bean id="test" class="com.ofben.autordemo.spring.ioc.annotation.CustomAutowireConfigurerTest"/>
 
 </beans>

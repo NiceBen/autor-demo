@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myValueCalculator" class="com.ofben.autordemo.spring.bean.MyValueCalculator">
+    <bean id="myValueCalculator" class="com.ofben.autordemo.spring.ioc.bean.MyValueCalculator">
         <replaced-method name="computeValue" replacer="replacementComputeValue">
             <arg-type>String</arg-type>
         </replaced-method>
     </bean>
 
-    <bean id="replacementComputeValue" class="com.ofben.autordemo.spring.bean.ReplacementComputeValue"/>
+    <bean id="replacementComputeValue" class="com.ofben.autordemo.spring.ioc.bean.ReplacementComputeValue"/>
 </beans>

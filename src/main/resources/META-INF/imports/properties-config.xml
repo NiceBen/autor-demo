@@ -12,6 +12,6 @@
 
     <context:property-placeholder location="classpath:/META-INF/definition/jdbc.properties"/>
 
-    <bean id="myBean" class="com.ofben.autordemo.spring.bean.BeanOne"/>
+    <bean id="myBean" class="com.ofben.autordemo.spring.ioc.bean.BeanOne"/>
 
 </beans>

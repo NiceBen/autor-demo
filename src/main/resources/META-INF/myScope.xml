@@ -6,9 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="manager2" class="com.ofben.autordemo.spring.bean.Manager" scope="myScope"/>
+    <bean id="manager2" class="com.ofben.autordemo.spring.ioc.bean.Manager" scope="myScope"/>
 
-    <bean id="accountDao" class="com.ofben.autordemo.spring.bean.AccountDao"/>
+    <bean id="accountDao" class="com.ofben.autordemo.spring.ioc.bean.AccountDao"/>
 
     <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
         <property name="scopes">
@@ -17,7 +17,7 @@
                     <bean class="org.springframework.context.support.SimpleThreadScope"/>
                 </entry>
                 <entry key="myScope">
-                    <bean class="com.ofben.autordemo.spring.bean.MyScope"/>
+                    <bean class="com.ofben.autordemo.spring.ioc.bean.MyScope"/>
                 </entry>
             </map>
         </property>

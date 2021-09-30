@@ -21,7 +21,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.ofben.autordemo.spring.container.AppConfig</param-value>
+        <param-value>com.ofben.autordemo.spring.ioc.container.AppConfig</param-value>
     </context-param>
     
     <listener>
@@ -37,7 +37,7 @@
         </init-param>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>com.ofben.autordemo.spring.container.AppConfig</param-value>
+            <param-value>com.ofben.autordemo.spring.ioc.container.AppConfig</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

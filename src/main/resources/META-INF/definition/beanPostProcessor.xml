@@ -9,8 +9,8 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean class="com.ofben.autordemo.spring.definition.FirstBeanPostProcessor"/>
+    <bean class="com.ofben.autordemo.spring.ioc.definition.FirstBeanPostProcessor"/>
 
-    <bean id="message" class="com.ofben.autordemo.spring.definition.Message"/>
+    <bean id="message" class="com.ofben.autordemo.spring.ioc.definition.Message"/>
 
 </beans>

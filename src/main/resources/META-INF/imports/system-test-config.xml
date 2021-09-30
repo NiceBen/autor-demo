@@ -12,7 +12,7 @@
     <context:annotation-config/>
     <context:property-placeholder location="classpath:/META-INF/definition/jdbc.properties"/>
 
-    <bean class="com.ofben.autordemo.spring.container.AppConfig"/>
+    <bean class="com.ofben.autordemo.spring.ioc.container.AppConfig"/>
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}"/>

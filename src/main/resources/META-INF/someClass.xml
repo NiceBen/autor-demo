@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="someClass" class="com.ofben.autordemo.spring.bean.SomeClass">
+    <bean id="someClass" class="com.ofben.autordemo.spring.ioc.bean.SomeClass">
         <property name="accounts">
             <map>
                 <entry key="one" value="9.99"/>
@@ -17,13 +17,13 @@
     </bean>
 
 
-    <bean id="someClass2" class="com.ofben.autordemo.spring.bean.SomeClass">
+    <bean id="someClass2" class="com.ofben.autordemo.spring.ioc.bean.SomeClass">
         <property name="accounts">
             <null/>
         </property>
     </bean>
 
-    <bean id="someClass3" class="com.ofben.autordemo.spring.bean.SomeClass" p:accounts="one=909.99">
+    <bean id="someClass3" class="com.ofben.autordemo.spring.ioc.bean.SomeClass" p:accounts="one=909.99">
     </bean>
 
 </beans>

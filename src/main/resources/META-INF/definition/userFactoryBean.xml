@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userFactoryBean" class="com.ofben.autordemo.spring.definition.UserFactoryBean">
+    <bean id="userFactoryBean" class="com.ofben.autordemo.spring.ioc.definition.UserFactoryBean">
     </bean>
 
 </beans>

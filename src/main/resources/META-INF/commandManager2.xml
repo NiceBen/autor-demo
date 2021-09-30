@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myCommand" class="com.ofben.autordemo.spring.bean.Command" scope="prototype">
+    <bean id="myCommand" class="com.ofben.autordemo.spring.ioc.bean.Command" scope="prototype">
     </bean>
 
-    <bean id="commandManager" class="com.ofben.autordemo.spring.bean.CommandManager2">
+    <bean id="commandManager" class="com.ofben.autordemo.spring.ioc.bean.CommandManager2">
         <lookup-method name="createCommand" bean="myCommand"/>
     </bean>
 

@@ -9,9 +9,9 @@
        http://www.springframework.org/schema/context
        https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.ofben.autordemo.spring.container"/>
+    <context:component-scan base-package="com.ofben.autordemo.spring.ioc.container"/>
 
-    <bean id="transferServiceTest" class="com.ofben.autordemo.spring.container.TransferServiceTest"
+    <bean id="transferServiceTest" class="com.ofben.autordemo.spring.ioc.container.TransferServiceTest"
         init-method="initMethod" destroy-method="destroyMethod"/>
 
 </beans>

@@ -9,14 +9,14 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<!--    <bean id="testBean" abstract="true" class="com.ofben.autordemo.spring.definition.TestBean">-->
+<!--    <bean id="testBean" abstract="true" class="com.ofben.autordemo.spring.ioc.definition.TestBean">-->
     <bean id="testBean" abstract="true">
         <property name="name" value="parent"/>
         <property name="age" value="1"/>
         <property name="hello" value="world"/>
     </bean>
 
-    <bean id="derivedTestBean" class="com.ofben.autordemo.spring.definition.DerivedTestBean"
+    <bean id="derivedTestBean" class="com.ofben.autordemo.spring.ioc.definition.DerivedTestBean"
           parent="testBean" init-method="init">
         <property name="name" value="override"/>
         <property name="address" value="BEIJING"/>

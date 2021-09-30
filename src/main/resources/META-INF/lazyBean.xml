@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd" default-lazy-init="true">
 
-    <bean id="lazyBean" class="com.ofben.autordemo.spring.bean.LazyBean" lazy-init="true">
+    <bean id="lazyBean" class="com.ofben.autordemo.spring.ioc.bean.LazyBean" lazy-init="true">
     </bean>
 
 </beans>

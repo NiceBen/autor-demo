@@ -9,16 +9,16 @@
 
 
     <!--基于CGLIB代理-->
-    <bean id="userPreferences" class="com.ofben.autordemo.spring.bean.UserPreferences" scope="session">
+    <bean id="userPreferences" class="com.ofben.autordemo.spring.ioc.bean.UserPreferences" scope="session">
         <aop:scoped-proxy/>
     </bean>
 
     <!--基于JDK动态代理-->
-    <bean id="userPreferences2" class="com.ofben.autordemo.spring.bean.UserPreferences2" scope="session">
+    <bean id="userPreferences2" class="com.ofben.autordemo.spring.ioc.bean.UserPreferences2" scope="session">
         <aop:scoped-proxy proxy-target-class="false"/>
     </bean>
 
-    <bean id="simpleUserService" class="com.ofben.autordemo.spring.bean.SimpleUserService">
+    <bean id="simpleUserService" class="com.ofben.autordemo.spring.ioc.bean.SimpleUserService">
         <property name="userPreferences" ref="userPreferences"/>
         <property name="userPreferences2" ref="userPreferences2"/>
     </bean>
