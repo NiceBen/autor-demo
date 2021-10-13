@@ -1,6 +1,6 @@
-package com.ofben.autordemo.spring.aop;
+package com.ofben.autordemo.spring.aop.demo1;
 
-import com.ofben.autordemo.spring.aop.interceptor.*;
+import com.ofben.autordemo.spring.aop.demo1.interceptor.*;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -35,6 +35,8 @@ public class AopInterceptorDemo {
                         // 后置拦截器
                         AfterInterceptor afterInterceptor = (proxy2, method2, args2, result2) -> System.currentTimeMillis();
                         endTime = (Long) afterInterceptor.after(proxy, method, args, result);
+
+                        return result;
                     } catch (Exception e) {
                         // 异常拦截器
                         ExceptionInterceptor exceptionInterceptor = (proxy3, method3, args3, e3) -> {};

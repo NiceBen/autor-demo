@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.aop.interceptor;
+package com.ofben.autordemo.spring.aop.demo1.interceptor;
 
 import java.lang.reflect.Method;
 

@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.aop;
+package com.ofben.autordemo.spring.aop.demo1;
 
 /**
  * {@link EchoService}
