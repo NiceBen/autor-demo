@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sample" class="com.ofben.autordemo.spring.validation.databinding.DependsOnExoticType">
+        <property name="type" value="aNameForExoticType"/>
+    </bean>
+
+<!--    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">-->
+<!--        <property name="customEditors">-->
+<!--            <map>-->
+<!--                <entry key="com.ofben.autordemo.spring.validation.databinding.ExoticType"-->
+<!--                       value="com.ofben.autordemo.spring.validation.databinding.ExoticTypeEditor"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="customPropertyEditorRegistrar"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="customPropertyEditorRegistrar"
+          class="com.ofben.autordemo.spring.validation.typeconversion.CustomPropertyEditorRegistrar"/>
+
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean"/>
+
+</beans>
