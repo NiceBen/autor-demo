@@ -8,6 +8,6 @@ package com.ofben.autordemo.spring.spel;
  */
 public class SpEL {
     /*
-    https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#expressions
+    https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#expressions-language-ref
      */
 }
