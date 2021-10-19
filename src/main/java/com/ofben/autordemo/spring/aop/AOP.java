@@ -8,6 +8,6 @@ package com.ofben.autordemo.spring.aop;
  */
 public class AOP {
     /*
-    https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop
+    https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop-ataspectj-advice-params
      */
 }
