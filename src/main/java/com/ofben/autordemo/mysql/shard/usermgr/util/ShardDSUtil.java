@@ -2,14 +2,15 @@ package com.ofben.autordemo.mysql.shard.usermgr.util;
 
 import com.ofben.autordemo.mysql.shard.usermgr.util.dao.TblShardDetails;
 import com.ofben.autordemo.mysql.shard.usermgr.util.dao.TblShards;
+import com.ofben.autordemo.mysql.shard.usermgr.util.dto.ShardDSModel;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 分库分表的DateSource和表查询工具
@@ -35,10 +36,11 @@ public class ShardDSUtil {
         int modNum = tblShards.getModNum();
 
         // 查询 tbl_shardDetails
-
         String shardDetails_sql = "SELECT * FROM `tbl_shardDetails` WHERE groupId = '" + groupId
                 + "' AND (idBegin <= " + num + " AND " + num + " <=idEnd)";
         List<TblShardDetails> shardDetailsList = jdbcTemplate.query(shardDetails_sql,BeanPropertyRowMapper.newInstance(TblShardDetails.class));
+
+        List<String> shardTblNames = new ArrayList<>();
         shardDetailsList.forEach(detail -> {
             String modValue = detail.getModValue();
             String[] splitModNum = modValue.split(",");
@@ -47,6 +49,9 @@ public class ShardDSUtil {
             if (stringList.contains(trueModValue)) {
                 // 将这个条数据拿出来用
                 // TODO -- LL
+                String shardTblName = detail.getShardTblName();
+                int serverUuid = detail.getServerUuid();
+                shardTblNames.add(shardTblName);
             }
 
         });
