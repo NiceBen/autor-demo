@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.annotation.cacheable;
+package com.ofben.autordemo.spring.annotation.permission;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

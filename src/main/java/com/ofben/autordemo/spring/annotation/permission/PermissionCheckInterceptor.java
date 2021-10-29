@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.annotation.cacheable;
+package com.ofben.autordemo.spring.annotation.permission;
 
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

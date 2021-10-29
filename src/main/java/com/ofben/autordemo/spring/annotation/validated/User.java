@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.annotation;
+package com.ofben.autordemo.spring.annotation.validated;
 
 /**
  * 参数

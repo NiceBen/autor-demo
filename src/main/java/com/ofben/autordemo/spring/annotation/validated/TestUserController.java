@@ -1,4 +1,4 @@
-package com.ofben.autordemo.spring.annotation;
+package com.ofben.autordemo.spring.annotation.validated;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.validation.annotation.Validated;
