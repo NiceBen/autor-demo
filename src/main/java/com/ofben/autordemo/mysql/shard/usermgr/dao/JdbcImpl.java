@@ -1,5 +1,8 @@
 package com.ofben.autordemo.mysql.shard.usermgr.dao;
 
+import com.ofben.autordemo.mysql.shard.usermgr.util.BusFunType;
+import com.ofben.autordemo.mysql.shard.usermgr.util.ShardDSUtil;
+import com.ofben.autordemo.mysql.shard.usermgr.util.dto.ShardServerModel;
 import com.ofben.autordemo.mysql.shard.usermgr.vo.UserModel;
 import com.ofben.autordemo.mysql.shard.usermgr.vo.UserModelRowMapper;
 import org.springframework.context.ApplicationContext;
@@ -31,8 +34,21 @@ public class JdbcImpl implements UserDao {
          根据这个去查找“tbl_shard”，再查找“tbl_shardDetail”,
          然后再查“tbl_servers”，根据属性配置，找到 DataSource 和 真实的表名
          */
-        ds = (DataSource) ctx.getBean("ds" + "s1");
-        tblName = "tbl_user_1";
+//        ds = (DataSource) ctx.getBean("ds" + "s1");
+//        tblName = "tbl_user_1";
+
+//        JdbcTemplate jt = new JdbcTemplate(ds);
+//        jt.execute("insert into " + tblName +
+//                " values(" + um.getUuid() + ",'" + um.getName() + "')");
+
+
+        List<ShardServerModel> shardDSModel = ShardDSUtil.getShardDSModel(BusFunType.BUS_USER, um.getUuid());
+        ShardServerModel serverModel = shardDSModel.get(0);
+        String serverName = serverModel.getServerName();
+        String sqlTblName = serverModel.getTableNames().get(0);
+
+        ds = (DataSource) ctx.getBean("ds" + serverName);
+        tblName = sqlTblName;
 
 
         JdbcTemplate jt = new JdbcTemplate(ds);
@@ -81,10 +97,10 @@ public class JdbcImpl implements UserDao {
         t.ctx = appCtx;
 
         UserModel um = new UserModel();
-        um.setUuid(11);
-        um.setName("name11");
+        um.setUuid(14);
+        um.setName("name14");
 
-//        t.create(um);
-        t.getAll();
+        t.create(um);
+//        t.getAll();
     }
 }

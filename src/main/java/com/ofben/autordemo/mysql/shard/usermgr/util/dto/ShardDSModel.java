@@ -11,6 +11,7 @@ import java.util.List;
  * @since 1.0.0
  */
 @Data
+@Deprecated
 public class ShardDSModel {
 
     private List<ShardServerModel> serverModels;

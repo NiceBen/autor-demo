@@ -15,6 +15,7 @@ public class ShardServerModel {
 
     private String serverName;
 
+    @Deprecated
     private List<ShardTableModel> tableModels;
 
     private List<String> tableNames;
