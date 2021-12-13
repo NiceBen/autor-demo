@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:aspect id="concurrentOperationRetry" ref="concurrentOperationExecutor">
+            <aop:pointcut id="idempotentOperation"
+                          expression="execution(* com.ofben.autordemo.spring.aop.demo9.*.*(..)) and
+                            @annotation(com.ofben.autordemo.spring.aop.demo9.Idempotent)"/>
+            <aop:around pointcut-ref="idempotentOperation" method="doConcurrentOperation"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="concurrentOperationExecutor" class="com.ofben.autordemo.spring.aop.demo9.ConcurrentOperationExecutor">
+        <property name="maxRetries" value="3"/>
+        <property name="order" value="100"/>
+    </bean>
+
+    <bean id="personService" class="com.ofben.autordemo.spring.aop.demo9.PersonServiceImpl"/>
+</beans>

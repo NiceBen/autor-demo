@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:aop="http://www.springframework.org/schema/aop"
+           xmlns:tx="http://www.springframework.org/schema/tx"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       https://www.springframework.org/schema/aop/spring-tx.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+    <aop:config>
+        <aop:pointcut id="businessService" expression="execution(* com.ofben.autordemo.spring.aop.demo7.*.*(..))"/>
+        
+        <aop:aspect id="myAspect" ref="aBean">
+            <aop:pointcut id="businessService2" expression="execution(* com.ofben.autordemo.spring.aop.demo7.*.*(..))"/>
+            <aop:before pointcut-ref="businessService2" method="doAccessCheck"/>
+        </aop:aspect>
+
+        <aop:aspect id="afterReturningExample" ref="aBean">
+            <aop:pointcut id="businessService2" expression="execution(* com.ofben.autordemo.spring.aop.demo7.*.*(..))"/>
+            <aop:after-returning pointcut-ref="businessService2" returning="retVal" method="doAccessCheck2"/>
+        </aop:aspect>
+
+        <aop:aspect id="afterThrowingExample" ref="aBean">
+            <aop:pointcut id="businessService2" expression="execution(* com.ofben.autordemo.spring.aop.demo7.*.*(..))"/>
+            <aop:after-throwing pointcut-ref="businessService2" throwing="dataAccessEx" method="doRecoveryActions"/>
+        </aop:aspect>
+
+        <aop:aspect id="aroundExample" ref="aBean">
+            <aop:around pointcut-ref="businessService" method="doBasicProfiling"/>
+        </aop:aspect>
+
+    </aop:config>
+
+    <bean id="myAdvice" class="com.ofben.autordemo.spring.aop.demo7.MyAdvice"/>
+
+
+    <bean id="aBean" class="com.ofben.autordemo.spring.aop.demo7.SampleAspectJ"/>
+
+</beans>

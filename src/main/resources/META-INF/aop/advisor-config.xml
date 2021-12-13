@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx https://www.springframework.org/schema/aop/spring-tx.xsd">
+    
+    <aop:config>
+        <aop:pointcut id="advisorPointcut"
+                      expression="execution(* com.ofben.autordemo.spring.aop.demo8.PersonService.*(..))"/>
+
+        <aop:advisor pointcut-ref="advisorPointcut" advice-ref="tx-advice"/>
+    </aop:config>
+
+    <tx:advice id="tx-advice">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    
+    
+
+    <!-- this is the object that will be proxied by Spring's AOP infrastructure -->
+    <bean id="personService" class="com.ofben.autordemo.spring.aop.demo8.PersonServiceImpl"/>
+
+    <!-- this is the actual advice itself -->
+    <bean id="profiler" class="com.ofben.autordemo.spring.aop.demo8.SimpleProfiler"/>
+
+    <aop:config>
+        <aop:aspect ref="profiler">
+            <aop:pointcut id="theExecutionOfSomePersonServiceMethod"
+                          expression="execution(* com.ofben.autordemo.spring.aop.demo8.PersonService.getPerson(String,int))
+                and args(name, age)"/>
+            <aop:around pointcut-ref="theExecutionOfSomePersonServiceMethod" method="profile"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
