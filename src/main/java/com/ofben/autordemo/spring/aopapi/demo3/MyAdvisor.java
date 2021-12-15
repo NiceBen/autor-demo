@@ -2,7 +2,6 @@ package com.ofben.autordemo.spring.aopapi.demo3;
 
 import com.ofben.autordemo.spring.aopapi.demo2.LockMixin;
 import com.ofben.autordemo.spring.aopapi.demo2.Lockable;
-import lombok.Data;
 import org.springframework.aop.support.DefaultIntroductionAdvisor;
 
 /**
